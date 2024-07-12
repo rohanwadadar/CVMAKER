@@ -1,0 +1,16 @@
+.section-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.sectiont111 {
+  color: rgb(255, 254, 254);
+  cursor: pointer;
+  transition: color 0.5s;
+  font-size: 24px;
+  animation: blink 1s infinite;
+}
+
+/* Add blinking animation keyframes and other styles */

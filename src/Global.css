@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
+
+body {
+  margin: 0;
+  font-family: 'Signika Negative', sans-serif;
+  font-weight: 300;
+  background-color: #000000;
+}
+
+.wrapper.one {
+  /* Styles for wrapper.one class */
+}
+
+.drop-main {
+  display: flex;
+  font-size: 4.5rem;
+  margin: 1.5rem;
+  justify-content: left;
+  font-family: 'Russo One', sans-serif;
+  left: 80px;
+}
+
+.R, .O, .H, .A, .N {
+  opacity: 0;
+  /* Add other styles as needed */
+}
+
+/* Add styles for other elements in the global scope */
