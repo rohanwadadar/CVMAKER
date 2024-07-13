@@ -10,13 +10,11 @@
         body {
             background-color: #f8f9fa;
             padding-top: 20px;
-            font-family: 'Open Sans', sans-serif;
         }
         .cv-section {
             margin-bottom: 20px;
             padding: 20px;
             background-color: #fff;
-            border: 2px solid #000;
             border-radius: 10px;
             display: flex;
             flex-wrap: wrap;
@@ -26,54 +24,23 @@
             min-width: 300px;
         }
         .cv-title {
-            font-family: 'Lora', serif;
             margin-top: 20px;
             text-align: center;
-            color: #DAA520;
-            font-size: 2rem;
+            font-size: 4rem;
         }
         .cv-item strong {
-            color: #000;
             font-size: 1.2rem;
-            font-family: 'Lora', serif;
         }
         .cv-item span, .cv-item ul {
             color: #333;
         }
         .card {
-            border: 2px solid #000;
             border-radius: 10px;
         }
         .card-header {
-            background-color: #000;
-            color: #DAA520;
             font-weight: bold;
-            font-family: 'Lora', serif;
-        }
-        .card-body {
-            background-color: #fff;
-        }
-        .btn-primary {
-            background-color: #000;
-            border-color: #DAA520;
-        }
-        .btn-primary:hover {
-            background-color: #DAA520;
-            border-color: #000;
-            color: #000;
-        }
-        .btn-secondary {
-            background-color: #DAA520;
-            border-color: #000;
-            color: #000;
-        }
-        .btn-secondary:hover {
-            background-color: #000;
-            border-color: #DAA520;
-            color: #DAA520;
         }
         .form-group label {
-            color: #000;
             font-weight: bold;
         }
         .cv-right {
@@ -84,13 +51,11 @@
             margin-top: 20px;
         }
         .cv-image {
-            text-align: center;
+            text-align: left;
             margin-bottom: 20px;
         }
         .cv-image img {
-            max-width: 150px;
-            border-radius: 50%;
-            border: 2px solid #000;
+            max-width: 110px;
         }
         .footnote {
             text-align: center;
@@ -105,60 +70,162 @@
         .footnote a:hover {
             color: #333;
         }
+
+        /* Template 1 (Default) */
+        .template-1 {
+            font-family: 'Open Sans', sans-serif;
+            border: 2px solid #000;
+        }
+        .template-1 .cv-title {
+            font-family: 'Lora', serif;
+            color: #DAA520;
+        }
+        .template-1 .cv-item strong {
+            color: #000;
+            font-family: 'Lora', serif;
+        }
+        .template-1 .cv-image img {
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
+        .template-1 .card-header {
+            background-color: #000;
+            color: #DAA520;
+        }
+        .template-1 .btn-primary {
+            background-color: #000;
+            border-color: #DAA520;
+        }
+        .template-1 .btn-secondary {
+            background-color: #DAA520;
+            border-color: #000;
+            color: #000;
+        }
+
+        /* Template 2 */
+        .template-2 {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            border: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .template-2 .cv-title {
+            color: #4a4a4a;
+            font-weight: bold;
+        }
+        .template-2 .cv-item strong {
+            color: #4a4a4a;
+        }
+        .template-2 .cv-image img {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .template-2 .card-header {
+            background-color: #4a4a4a;
+            color: #fff;
+        }
+        .template-2 .btn-primary {
+            background-color: #4a4a4a;
+            border-color: #333;
+        }
+        .template-2 .btn-secondary {
+            background-color: #333;
+            border-color: #4a4a4a;
+            color: #fff;
+        }
+
+        /* Template 3 */
+        .template-3 {
+            font-family: 'Playfair Display', serif;
+            background-color: #e6f3ff;
+            color: #003366;
+            border: 2px solid #0066cc;
+        }
+        .template-3 .cv-title {
+            color: #0066cc;
+            font-style: italic;
+        }
+        .template-3 .cv-item strong {
+            color: #0066cc;
+        }
+        .template-3 .cv-image img {
+            border-radius: 0;
+            border: 2px solid #0066cc;
+        }
+        .template-3 .card-header {
+            background-color: #0066cc;
+            color: #fff;
+        }
+        .template-3 .btn-primary {
+            background-color: #0066cc;
+            border-color: #003366;
+        }
+        .template-3 .btn-secondary {
+            background-color: #003366;
+            border-color: #0066cc;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-  <h1 id="cv-title" class="cv-title">cv maker</h1>
-<div class="container">
-    <div id="cv-content" class="p-3 mb-2 cv-section">
-        <div class="cv-left">
-            <div class="cv-image" id="cv-image">
-                <img id="cv-photo" src="" alt="Passport Photo">
+    <h1 id="cv-title" class="cv-title">CV Maker</h1>
+    <div class="container">
+        <div id="cv-content" class="p-3 mb-2 cv-section">
+            <div class="cv-left">
+                <div class="cv-image" id="cv-image">
+                    <img id="cv-photo" src="" alt="Passport Photo">
+                </div>
+                <h1 id="cv-name" class="cv-item"><span></span></h1>
+                <p id="cv-dob" class="cv-item"><strong>Date of Birth:</strong> <span></span></p>
+                <p id="cv-address" class="cv-item"><strong>Address:</strong> <span></span></p>
+                <p id="cv-phone" class="cv-item"><strong>Phone Number:</strong> <span></span></p>
+                <p id="cv-email" class="cv-item"><strong>Email:</strong> <span></span></p>
+                <div id="cv-projects" class="cv-item">
+                    <strong>Projects:</strong>
+                    <ul></ul>
+                </div>
             </div>
-            <h1 id="cv-name" class="cv-title"><span></span></h1>
-            <p id="cv-name" class="cv-item"><strong></strong> <span></span></p>
-            <p id="cv-dob" class="cv-item"><strong>Date of Birth:</strong> <span></span></p>
-            <p id="cv-address" class="cv-item"><strong>Address:</strong> <span></span></p>
-            <p id="cv-phone" class="cv-item"><strong>Phone Number:</strong> <span></span></p>
-            <p id="cv-email" class="cv-item"><strong>Email:</strong> <span></span></p>
-            <div id="cv-projects" class="cv-item">
-                <strong>Projects:</strong>
-                <ul></ul>
+            <div class="cv-right">
+                <div id="cv-profile" class="cv-item">
+                    <strong>Profile Summary:</strong>
+                    <p></p>
+                </div>
+                <div id="cv-education" class="cv-item">
+                    <strong>Education:</strong>
+                    <ul></ul>
+                </div>
+                <div id="cv-experience" class="cv-item">
+                    <strong>Work Experience:</strong>
+                    <ul></ul>
+                </div>
+                <div id="cv-skills" class="cv-item">
+                    <strong>Skills:</strong>
+                    <ul></ul>
+                </div>
+                <div id="cv-achievements" class="cv-item">
+                    <strong>Achievements:</strong>
+                    <ul></ul>
+                </div>
             </div>
-           
+            <div class="footnote">
+                <p>Website powered by <a href="https://hhappt115.wixstudio.io/mysite" target="_blank">@rohan.wadadar</a></p>
+            </div>
         </div>
-        <div class="cv-right">
-            <div id="cv-profile" class="cv-item">
-                <strong>Profile Summary:</strong>
-                <p></p>
-            </div>
-            <div id="cv-education" class="cv-item">
-                <strong>Education:</strong>
-                <ul></ul>
-            </div>
-            <div id="cv-experience" class="cv-item">
-                <strong>Work Experience:</strong>
-                <ul></ul>
-            </div>
-            <div id="cv-skills" class="cv-item">
-                <strong>Skills:</strong>
-                <ul></ul>
-            </div>
-            <div id="cv-achievements" class="cv-item">
-              <strong>Achievements:</strong>
-              <ul></ul>
-          </div>
-        </div>
-        <div class="footnote">
-          <p>Website powered by <a href="https://hhappt115.wixstudio.io/mysite" target="_blank">@rohan.wadadar</a></p>
-      </div>
-  </div>
     </div>
     
     <div class="card">
         <div class="card-header">Enter Your Details</div>
         <div class="card-body">
             <form id="cv-form">
+                <div class="form-group">
+                    <label for="template">Select Template</label>
+                    <select class="form-control" id="template">
+                        <option value="template-1">Template 1 (Default)</option>
+                        <option value="template-2">Template 2</option>
+                        <option value="template-3">Template 3</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="photo">Upload Photo</label>
                     <input type="file" class="form-control" id="photo" accept="image/*">
@@ -227,6 +294,12 @@
         } else {
             document.getElementById('cv-photo').src = "";
         }
+    });
+
+    document.getElementById('template').addEventListener('change', function(event) {
+        const template = event.target.value;
+        const cvContent = document.getElementById('cv-content');
+        cvContent.className = 'p-3 mb-2 cv-section ' + template;
     });
 
     document.getElementById('cv-form').addEventListener('submit', function(event) {
