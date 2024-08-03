@@ -32,11 +32,25 @@
             padding: 50px;
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
         }
         .welcome-section h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            --s: 0.1em;   /* the thickness of the line */
+            --c: #2c4bff; /* the color */
+            
+            color: #0000;
+            padding-bottom: var(--s);
+            background: 
+                linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+                linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+            -webkit-background-clip: text,padding-box;
+                    background-clip: text,padding-box;
+            transition: 0.5s;
+        }
+        .welcome-section h1:hover {
+            --_p: 100%;
         }
         .welcome-section p {
             font-size: 1.5rem;
@@ -47,20 +61,39 @@
             justify-content: center;
             gap: 20px;
         }
+        .google-signin {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
     </style>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
 </head>
 <body>
     <div class="overlay"></div>
     <div class="container">
+        <div class="google-signin">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
         <div class="welcome-section">
             <h1>Welcome to CV Maker</h1>
             <p>Create your professional CV effortlessly</p>
             <div class="btn-container">
-                <a href="cv.html" class="btn btn-primary btn-lg">Create CV</a>
-
+                <a href="cv_maker/cv.html" class="btn btn-primary btn-lg">Create CV</a>
                 <a href="https://rohanwadadar.github.io/portfolio/" class="btn btn-secondary btn-lg">About Us</a>
             </div>
         </div>
     </div>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+            // Add your own logic to handle sign-in
+        }
+    </script>
 </body>
 </html>
